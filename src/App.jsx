@@ -1,4 +1,5 @@
 import React from "react"
+import './app.scss'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -6,6 +7,12 @@ import {
 } from "react-router-dom";
 import Home from './pages/home/Home.jsx'
 import Navbar from "./components/navbar/Navbar"
+import Footer from "./components/footer/Footer.jsx";
+import Gigs from "./pages/gigs/Gigs.jsx";
+import Gig from "./pages/gig/Gig.jsx";
+import Orders from "./pages/orders/Orders.jsx";
+import MyGigs from "./pages/myGigs/MyGigs.jsx";
+import Add from "./pages/add/Add.jsx";
 
 function App() {
 
@@ -14,6 +21,7 @@ function App() {
       <div className="app">
         <Navbar/>
         <Outlet/>
+        <Footer/>
       </div>
     )
   }
@@ -21,11 +29,31 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Navbar/>,
+      element: <Layout/>,
       children: [
         {
           path: "/",
-          element: <Layout/>
+          element: <Home/>
+        },
+        {
+          path: "/gigs",
+          element: <Gigs/>
+        },
+        {
+          path: "/gig/:id",
+          element: <Gig/>
+        },
+        {
+          path: "/orders",
+          element: <Orders/>
+        },
+        {
+          path: "/mygigs",
+          element: <MyGigs/>
+        },
+        {
+          path: "/add",
+          element: <Add/>
         },
       ]
     },
