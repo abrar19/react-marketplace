@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import {Link} from 'react-router-dom'
+import {Link, useLocation} from 'react-router-dom'
 import './navbar.scss'
+import dpLogo from './img/logo.jpg'
 
 const Navbar = () => {
 
     const [active, setActive] = useState(false);
+    const [openOptions, setOpenOptions] = useState(false);
 
     const isActive = () => {
         window.scrollY > 0 ? setActive(true) : setActive(false);
@@ -17,8 +19,16 @@ const Navbar = () => {
         };
     }, []);
 
+    const currentUser = {
+        id: 1,
+        username: "Abrar Haque",
+        isSeller: true
+    }
+
+    const {pathname} = useLocation();
+
     return (
-        <div className={active ? 'navbar active' : 'navbar'}>
+        <div className={active || pathname != '/' ? 'navbar active' : 'navbar'}>
             <div className="container">
                 <div className="logo">
                     <Link to='/' className='link'>
@@ -31,11 +41,28 @@ const Navbar = () => {
                     <span>Explore</span>
                     <span>English</span>
                     <span>Sign in</span>
-                    <span>Become a seller</span>
-                    <button>Join</button>
+                    {!currentUser?.isSeller && <span>Become a seller</span>}
+                    {!currentUser && <button>Join</button>}
+                    {currentUser && (
+                        <div className="user" onClick={()=>setOpenOptions(!openOptions)}>
+                            <img src={dpLogo} alt="" />
+                            <span>{currentUser.username}</span>
+                            {openOptions && <div className="options">
+                                {currentUser?.isSeller && (
+                                    <>
+                                        <Link to="/mygigs" className='link'>Gigs</Link>
+                                        <Link to="/add" className='link'>Add New Gig</Link>
+                                    </>
+                                )}
+                                <Link to="/orders" className='link'>Orders</Link>
+                                <Link to="/messages" className='link'>Messages</Link>
+                                <Link to="/logout" className='link'>Logout</Link>
+                            </div>}
+                        </div>
+                    )}
                 </div>
             </div>
-            {active && <>
+            { (active || pathname != '/') && <>
                 <hr />
                 <div className="menu">
                     <span>Tst</span>
