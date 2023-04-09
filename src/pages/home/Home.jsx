@@ -3,8 +3,9 @@ import './home.scss'
 import Featured from '../../components/featured/Featured';
 import TrustedBy from '../../components/trustedBy/TrustedBy';
 import Slide from '../../components/slide/Slide';
-import { cards } from '../../data';
+import { cards, projects } from '../../data';
 import CatCard from '../../components/catCard/CatCard';
+import ProCard from '../../components/proCard/ProCard';
 
 const Home = () => {
     return (
@@ -74,9 +75,9 @@ const Home = () => {
                 </div>
             </div>
 
-            <Slide slidesToShow={5} arrowsScroll={5}>
-                {cards.map((card)=>(
-                    <CatCard key={card.id} card={card} /> 
+            <Slide slidesToShow={4} arrowsScroll={4}>
+                {projects.map((proCard)=>(
+                    <ProCard key={proCard.id} proCard={proCard} /> 
                 ))}
             </Slide>
         </div>
