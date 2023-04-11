@@ -104,4 +104,61 @@ export const projects = [
         cat: "Gig1",
         username: "Anna Bell"
     }
-]
+];
+
+export const gigs = [
+    {
+        id: 1,
+        img: "./img/pro1.jpg",
+        pp: "./img/pro1.jpg",
+        desc: "Gig1 desc",
+        price: 112,
+        star: 5,
+        username: "Anna Bell"
+    },
+    {
+        id: 2,
+        img: "./img/pro2.jpg",
+        pp: "./img/pro2.jpg",
+        desc: "Gig1 desc",
+        price: 110,
+        star: 5,
+        username: "Anna Bell"
+    },
+    {
+        id: 3,
+        img: "./img/pro3.jpg",
+        pp: "./img/pro3.jpg",
+        desc: "Gig1 desc",
+        price: 110,
+        star: 5,
+        username: "Anna Bell"
+    },
+    {
+        id: 4,
+        img: "./img/pro4.jpg",
+        pp: "./img/pro4.jpg",
+        desc: "Gig1 desc",
+        price: 110,
+        star: 5,
+        username: "Anna Bell"
+    },
+    {
+        id: 5,
+        img: "./img/pro5.jpg",
+        pp: "./img/pro5.jpg",
+        desc: "Gig1 desc",
+        price: 110,
+        star: 5,
+        username: "Anna Bell"
+    },
+    {
+        id: 6,
+        img: "./img/pro6.jpg",
+        pp: "./img/pro6.jpg",
+        desc: "Gig1 desc",
+        price: 110,
+        star: 5,
+        username: "Anna Bell"
+    }
+];
