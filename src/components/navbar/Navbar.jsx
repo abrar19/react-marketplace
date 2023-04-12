@@ -87,6 +87,7 @@ const Navbar = () => {
                         Programming & Tech
                     </Link>
                 </div>
+                <hr />
             </>}
         </div>
     );
