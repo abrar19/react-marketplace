@@ -13,6 +13,8 @@ import Gig from "./pages/gig/Gig.jsx";
 import Orders from "./pages/orders/Orders.jsx";
 import MyGigs from "./pages/myGigs/MyGigs.jsx";
 import Add from "./pages/add/Add.jsx";
+import Messages from "./pages/messages/Messages";
+import Message from "./pages/message/Message";
 
 function App() {
 
@@ -55,6 +57,14 @@ function App() {
           path: "/add",
           element: <Add/>
         },
+        {
+          path: "/messages",
+          element: <Messages/>
+        },
+        {
+          path: "/message/:id",
+          element: <Message/>
+        }
       ]
     },
   ]);
